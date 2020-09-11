@@ -13,8 +13,23 @@ public class ApplePicker : MonoBehaviour
 
     public List<GameObject> basketList;
 
+    private Score _Score;
+
+    private void Awake()
+    {
+        if (_Score == null)
+        {
+            NewScore();
+        }
+    }
+    public void NewScore()
+    {
+        _Score = new Score();
+    }
+
     private void Start()
     {
+
         basketList = new List<GameObject>();
         for (int i = 0; i < numBaskets; i++)
         {

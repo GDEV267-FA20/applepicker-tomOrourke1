@@ -7,6 +7,11 @@ public class Basket : MonoBehaviour
     [Header("Set Dynamically")]
     public Text scoreGT;
 
+
+    private Score _Score;
+
+    private int point = 100;
+
     private void Start()
     {
         //Find a reference to the ScoreCOunter GameOBject
@@ -17,8 +22,18 @@ public class Basket : MonoBehaviour
 
         // Set the starting numbert of points to 0
         scoreGT.text = "0";
+
+
+        _Score = Camera.main.GetComponent<Score>();
     }
     private void Update()
+    {
+        Move();
+
+
+    }
+
+    void Move()
     {
         //Get the current screen position of the mouse from input
         Vector3 mousePos2D = Input.mousePosition;
@@ -52,7 +67,8 @@ public class Basket : MonoBehaviour
             int score = int.Parse(scoreGT.text);
 
             //add points for catching the apple
-            score += 100;
+            score += point;
+            _Score.AddScore(point);
 
             //convert the score back to a string and display it
             scoreGT.text = score.ToString();
