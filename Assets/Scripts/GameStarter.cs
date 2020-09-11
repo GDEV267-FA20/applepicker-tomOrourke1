@@ -15,6 +15,9 @@ public class GameStarter : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 }
