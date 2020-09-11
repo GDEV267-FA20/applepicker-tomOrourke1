@@ -22,21 +22,35 @@ public class AppleTree : MonoBehaviour
     public float secondsBetweenAppleDrops = 1f;
 
 
+    private float appleDropps = 1f;
+
     private void Start()
     {
         // Dropping apples every second
-        Invoke("DropApple", 2f);
+        //Invoke("DropApple", 2f);
+        StartCoroutine(DropApple());
     }
 
-    void DropApple()
+    IEnumerator DropApple()
     {
+        yield return new WaitForSeconds(appleDropps);
+
         GameObject apple = Instantiate<GameObject>(applePrefab);
 
         apple.transform.position = transform.position;
         Invoke("DropApple", secondsBetweenAppleDrops);
+
+        StartCoroutine(DropApple());
     }
+    
 
     private void Update()
+    {
+        Move();
+        
+        
+    }
+    void Move()
     {
         // Basic Movement
         Vector3 pos = transform.position;
@@ -44,8 +58,8 @@ public class AppleTree : MonoBehaviour
         pos.x += speed * Time.deltaTime;
 
         transform.position = pos;
-        // Changing Directions
 
+        // Changing Direction
         if (pos.x < -leftAndRightEdge)
         {
             speed = Mathf.Abs(speed);
