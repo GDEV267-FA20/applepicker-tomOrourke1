@@ -58,4 +58,5 @@ public class ApplePicker : MonoBehaviour
             SceneManager.LoadScene(2); // loads game over screen
         }
     }
+
 }
