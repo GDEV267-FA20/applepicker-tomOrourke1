@@ -8,7 +8,6 @@ public class Basket : MonoBehaviour
     public Text scoreGT;
 
 
-    private Score _Score;
 
     private int point = 100;
 
@@ -23,8 +22,6 @@ public class Basket : MonoBehaviour
         // Set the starting numbert of points to 0
         scoreGT.text = "0";
 
-
-        _Score = Camera.main.GetComponent<Score>();
     }
     private void Update()
     {
@@ -70,7 +67,6 @@ public class Basket : MonoBehaviour
 
             //add points for catching the apple
             score += point;
-            _Score.AddScore(point);
 
             //convert the score back to a string and display it
             scoreGT.text = score.ToString();
