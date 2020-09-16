@@ -5,6 +5,7 @@ using UnityEngine;
 public class Apple : MonoBehaviour
 {
     public static float bottomY = -20f;
+   
 
 
     // Update is called once per frame
@@ -16,7 +17,10 @@ public class Apple : MonoBehaviour
 
             // Get a reference to the ApplePicker component of Main Camera
             ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+            
+           
             apScript.AppleDestroyed();
+
         }
     }
 }

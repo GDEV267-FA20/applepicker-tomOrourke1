@@ -23,13 +23,15 @@ public class AppleTree : MonoBehaviour
 
 
     private float appleDropps = 1f;
-
+    
     private void Start()
     {
         // Dropping apples every second
         //Invoke("DropApple", 2f);
         StartCoroutine(DropApple());
     }
+    
+
 
     IEnumerator DropApple()
     {

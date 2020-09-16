@@ -34,11 +34,13 @@ public class ApplePicker : MonoBehaviour
     {
         // Destroy all of the falling apples
         GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
-
+        
         foreach (GameObject tGO in tAppleArray)
         {
             Destroy(tGO);
+            
         }
+        
 
 
         // Destroy one of the baskets
@@ -60,6 +62,8 @@ public class ApplePicker : MonoBehaviour
         {
             SceneManager.LoadScene(2); // loads game over screen
         }
+        
     }
 
+   
 }
