@@ -22,7 +22,7 @@ public class AppleTree : MonoBehaviour
     public float secondsBetweenAppleDrops = 1f;
 
 
-    private float appleDropps = 1f;
+    public float appleDropps = 1f;
     
     private void Start()
     {

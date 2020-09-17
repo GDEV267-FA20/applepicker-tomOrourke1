@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,8 @@ public class ApplePicker : MonoBehaviour
 
     public List<GameObject> basketList;
 
-  
+
+    private bool canDestroy;
 
     private void Start()
     {
@@ -30,10 +32,15 @@ public class ApplePicker : MonoBehaviour
         }
     }
 
+    float time;
+
+   
+
     public void AppleDestroyed()
     {
         // Destroy all of the falling apples
         GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
+
         
         foreach (GameObject tGO in tAppleArray)
         {
